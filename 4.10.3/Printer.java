@@ -1,38 +1,32 @@
 public class Printer {
 
-    public String queue = " ";
-    public int pendingPagesCount = 0;
-    public int allPendingPagesCount = 0;
-
+    public static String queue = " "; // список документов на печать
+    public int pendingPagesCount = 0; // кол-во страниц в очереди
+    public static int allPendingPagesCount = 0; // количество распечатанных страниц за всё время
+    
     public Printer() {
-        queue = "Список документов на печать.";
+        queue = "Печать документов." + "\n";
     }
 
     public Printer(String queue, int pendingPagesCount, int allPendingPagesCount) {
-        this();
-        this.queue = queue;
-        this.pendingPagesCount = pendingPagesCount;
-        this.allPendingPagesCount = allPendingPagesCount;
     }
 
     public void append(String docText) {
-        append("", "", 0);
+        append(docText, "noname", 1);
     }
 
     public void append(String docText, String docName) {
-        append("", "", 1);
+        append(docText, docName, 1);
 
     }
 
     public void append(String docText, String docName, int docPages) {
         pendingPagesCount = pendingPagesCount + docPages;
-        allPendingPagesCount = allPendingPagesCount + docPages;
-
         queue = queue + "\n" + "Имя документа: " + docName + "\n"
                       + "Текст документа: " + docText + "\n"
                       + "Страниц в документе: " + docPages;
     }
-
+    
     public int getPendingPagesCount() {
         return pendingPagesCount;
     }
@@ -46,16 +40,13 @@ public class Printer {
         pendingPagesCount = 0;
     }
 
-    public void print(String allPages) {
-        System.out.println(allPages);
+    public void print(String docum) {
+        System.out.println(docum);
         System.out.println(queue);
-        System.out.println("Док-ов в очереди:" + getPendingPagesCount());
+        System.out.println("Страниц в очереди:" + getPendingPagesCount());
+        allPendingPagesCount = allPendingPagesCount + pendingPagesCount;
         clear();
         System.out.println("Очередь печати очищена.");
-        System.out.println("Док-ов в очереди:" + pendingPagesCount);
-        System.out.println("Общеее кол-во док-ов в истории:" + getAllpendingPagesCount());
+        System.out.println("Общеее кол-во страниц в истории:" + getAllpendingPagesCount());
     }
 }
-
-
-
