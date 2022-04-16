@@ -1,5 +1,3 @@
-package ru.skillbox;
-
 public class House {
     private String addressStreet;
     private int houseNumber;

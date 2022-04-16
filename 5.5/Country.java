@@ -1,5 +1,3 @@
-package ru.skillbox;
-
 public class Country {
     private String name;
     private int population;
