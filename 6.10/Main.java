@@ -18,7 +18,7 @@ public class Main {
                                         keyboard,
                                         display);
         System.out.println(comp1);
-        System.out.println("Общая массы компьютера = " + comp1.getTotalWeight() + " кг.");
+        System.out.println("Общая масса компьютера = " + comp1.getTotalWeight() + " кг.");
 
         Computer comp2 = new Computer("HP", "Pavilion");
         comp2.setProcessor(new Cpu(2.2,4,CpuBrand.AMD,22.1));
@@ -29,13 +29,13 @@ public class Main {
 
 
         System.out.println("Производитель: " + comp2.vendor +"\n"+
-                            "название: " + comp2.name +"\n"+
+                            "Название: " + comp2.name +"\n"+
                             "Процессор: " + comp2.getProcessor() +"\n"+
                             "Оперативная память: " + comp2.getMemory() +"\n"+
                             "Накопитель информации: " + comp2.getDiskType() +"\n"+
                             "Экран: " + comp2.getDisplay() +"\n"+
                             "Клавиатура: " + comp2.getKeyboard());
-        System.out.println("Общая массы компьютера = " + comp2.getTotalWeight() + " кг.");
+        System.out.println("Общая масса компьютера = " + comp2.getTotalWeight() + " кг.");
 
 
 
