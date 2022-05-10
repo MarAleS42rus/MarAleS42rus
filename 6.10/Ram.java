@@ -1,20 +1,20 @@
 package ru.skillbox;
 
-public class Keyboard {
+public class Ram {
+    final int size;
     final String type;
-    final boolean light;
     final double weight;
 
-    public Keyboard(String type, boolean light, double weight) {
+    public Ram(int size, String type, double weight) {
+        this.size = size;
         this.type = type;
-        this.light = light;
         this.weight = weight;
     }
 
     public String toString() {
-        return "Keyboard { " +
-                "type = " + type +
-                ", light = " + light +
+        return "Ram {" +
+                " size = " + size + " Mb" +
+                ", type = " + type + '\'' +
                 ", weight = " + weight + " g" +
                 '}';
     }

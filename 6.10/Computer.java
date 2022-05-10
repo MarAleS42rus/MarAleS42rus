@@ -7,6 +7,12 @@ public class Computer {
     private Storage diskType;
     private Keyboard keyboard;
     private Display display;
+    double totalWeight;
+
+    public Computer(String vendor, String name) {
+        this.vendor = vendor;
+        this.name = name;
+    }
 
     public Computer(String vendor,
                     String name,
@@ -64,7 +70,20 @@ public class Computer {
         this.display = display;
     }
 
-    public void showParametersComputer() {
-
+    public double getTotalWeight() {
+        totalWeight = processor.weight + memory.weight + diskType.weight + keyboard.weight + display.weight;
+        return totalWeight;
     }
+    
+    public String toString() {
+        return "Computer " + "\n" +
+                "vendor: " + vendor + "\n" +
+                " name: " + name + "\n" +
+                " processor: " + processor + "\n" +
+                " memory: " + memory + "\n" +
+                " diskType: " + diskType + "\n" +
+                " keyboard: " + keyboard + "\n" +
+                " display: " + display;
+    }
+
 }
